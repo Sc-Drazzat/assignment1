@@ -4,8 +4,6 @@ class Solution {
         square.print();
     }
 }
-
-
 public  class Rectangle {
     private double width;
     private double height;
