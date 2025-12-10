@@ -1,20 +1,15 @@
-class Solution {
-    public static void main(String[] args) {
-        Rectangle square = new Rectangle(5, 5);
-        square.print();
-    }
-}
-public  class Rectangle {
+public class Rectangle {
     private double width;
     private double height;
     private int id;
     private static int idGen = 1;
-    Rectangle{
+    Rectangle(){
         this.width = 1.0;
         this.height = 1.0;
         this.id = idGen++;
     }
     public Rectangle(double width, double height){
+        this();
         this.width = width;
         this.height = height;
     }
