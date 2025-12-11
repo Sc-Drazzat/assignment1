@@ -6,18 +6,41 @@ public class Rectangle {
     private int id;
     private static int idGen = 1;
     Rectangle(){
-        this.width = 1.0;
-        this.height = 1.0;
-        this.id = idGen++;
+        width = 1.0;
+        height = 1.0;
+        id = idGen++;
     }
     public Rectangle(double width, double height){
         this();
-        this.width = width;
-        this.height = height;
+        setWidth(width);
+        setHeight(height);
     }
-    void print(){
-        System.out.println("Rectangle ID: " + this.id);
-        System.out.println("Rectangle width: " + this.width);
-        System.out.println("Rectangle height: " + this.height);
+    public void setWidth(double width){
+        if (width <= 0)
+            throw new IllegalArgumentException("Width must be greater than 0.");
+        else
+            this.width = width;
+    }
+    public void setHeight(double height){
+        if (height <= 0)
+            throw new IllegalArgumentException("Height must be greater than 0.");
+        else
+            this.height = height;
+    }
+    public double getWidth(){
+        return width;
+    }
+    public double getHeight(){
+        return height;
+    }
+    public double area(){
+        return width * height;
+    }
+    public double perimeter(){
+        return 2*(width + height);
+    }
+    @Override
+    public String toString(){
+        return "Rectangle [id=" + id + ", height=" + height + ", width=" + width + "]";
     }
 }
