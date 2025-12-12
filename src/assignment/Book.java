@@ -9,7 +9,7 @@ public class Book {
     private boolean available;
     public Book(){
         id = idGen++;
-        available = true;
+        setAvailable(true);
     }
     public Book(String title, String author, int year){
         this();
